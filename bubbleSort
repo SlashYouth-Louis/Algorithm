@@ -1,0 +1,22 @@
+from randomList import randomList
+import timeit
+
+i_List = randomList(20)
+
+def bubbleSort(i_List):
+
+    if len(i_List) <= 1:
+        return i_List
+    for i in range(1, len((i_List))):
+        for j in range(0, len(i_List)-i):
+            if i_List[j] >= i_List[j+1]:
+                i_List[j], i_List[j+1] = i_List[j+1], i_List[j]
+        # print("第 %d 轮排序结果：" %i, end="")
+        # print(iList)
+    return i_List
+
+
+if __name__ == "__main__":
+    print(i_List)
+    print(bubbleSort(i_List))
+    print(timeit.timeit("bubbleSort(i_List)", "from __main__ import bubbleSort,i_List", number=100))
