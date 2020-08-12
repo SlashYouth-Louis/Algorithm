@@ -1,0 +1,14 @@
+import random
+
+
+def randomList(n):
+
+    i_list = []
+    for i in range(n):
+        i_list.append(random.randrange(1000))
+    return i_list
+
+
+if __name__ == "__main__":
+    iList = randomList(10)
+    print(iList)
