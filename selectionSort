@@ -1,0 +1,23 @@
+from randomList import randomList
+import timeit
+
+i_List = randomList(20)
+
+
+def selectionSort(i_List):
+    if len(i_List) <= 1:
+        return i_List
+    for i in range(0, len(i_List) - 1):
+        if i_List[i] != min(i_List[i:]):
+            minIndex = i_List.index(min(i_List[i:]))
+            i_List[i], i_List[minIndex] = i_List[minIndex], i_List[i]
+        # print("第 %d 轮排序结果：" % (i + 1), end="")
+        # print(i_List)
+    return i_List
+
+
+if __name__ == "__main__":
+    print(i_List)
+    print(selectionSort(i_List))
+    print(timeit.timeit("selectionSort(i_List)", "from __main__ import selectionSort, i_List", number=10))
+
